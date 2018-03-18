@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body %}
+    <h1 class="journal-header">
+        Aritcles related Journal
+    </h1>
+    <div class="article-list">
+        {% for value in form %}
+            <div class="article-item">
+                <a href="/article/view/{{ value.id }}" target="_blank">{{value.name}}</a>
+                <a href="/article/{{ value.id }}"><button class="btn btn-primary action-btn">EDIT</button></a>
+                <a href="/article/delete/{{ value.id }}"><button class="btn btn-primary action-btn" >DELETE</button></a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

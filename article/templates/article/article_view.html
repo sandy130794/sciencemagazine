@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body %}
+    <h1 class="journal-header">Articles</h1>
+    <div class="row">
+        <div class="col-xs-12">
+        {% for value in article_display %}
+            <div class="journal-outer-container col-xs-4">
+                <div class="journal-container">
+                    <div class="journal-name">
+                        {{value.name}}
+                    </div>
+                    <div class="second-data">
+                        <div class="image-journal">
+                            <img class="journal-image" src="{{ value.image.url }}">
+                            <a href="{{ value.file.url|safe }}" target="_blank">view</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

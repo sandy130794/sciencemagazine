@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body %}
+    <h1>Editors list</h1>
+    {% for value in editor_display %}
+    <div>
+        <a href="/editor/view/{{ value.id }}">{{value.name}}</a>
+        <a href="/editor/{{ value.id }}"><button class="btn btn-primary">EDIT</button></a>
+        <a href="/editor/delete/{{ value.id }}"><button class="btn btn-primary" >DELETE</button></a>
+    </div>
+    {% endfor %}
+{% endblock %}

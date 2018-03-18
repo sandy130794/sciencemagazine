@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body %}
+    <h1 class="journal-header">
+        Journals list
+         <a href="/journal" ><button class="btn btn-primary add-btn-journal">ADD</button></a>
+    </h1>
+     <div class="row">
+         <div class="col-xs-12">
+            {% for value in form %}
+                <div class="journal-outer-container col-xs-4">
+                    <div class="journal-container">
+                        <div class="journal-name">
+                            {{value.name}}
+                            <a href="/journal/{{ value.id }}"><button class="btn btn-primary action-btn">EDIT</button></a>
+                            <a href="/journal/delete/{{ value.id }}"><button class="btn btn-primary action-btn" >DELETE</button></a>
+                        </div>
+                        <div class="second-data">
+                            <div class="image-journal">
+                                <img class="journal-image" src="{{ value.image.url }}">
+                                <a href="{{ value.file.url|safe }}" target="_blank">view</a>
+                            </div>
+                            <div class="functionality">
+                                <div class="articles">
+                                    <a href="/article/create/{{ value.id }}"><button class="btn btn-primary action-btn" >ADD ARTICLE</button></a>
+                                    <a href="/journal/articles/{{ value.id }}"><button class="btn btn-primary action-btn">RELATED ARTICLES</button></a>
+                                </div>
+                                <div class="editors">
+                                    <a href="/editor/create/{{ value.id }}"><button class="btn btn-primary action-btn" >ADD EDITOR</button></a>
+                                    <a href="/journal/editors/{{ value.id }}"><button class="btn btn-primary action-btn">RELATED EDITORS</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+         </div>
+     </div>
+{% endblock %}

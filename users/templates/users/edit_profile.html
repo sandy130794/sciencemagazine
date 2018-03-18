@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+{% block body %}
+<!--{% load staticfiles %}-->
+<div class="container">
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <!--<form method = "post">-->
+        <!--{% csrf_token %}-->
+        <!--{{ form.as_p }}-->
+        <!--<img  src ="{{ users.userprofile.image.url }}" alt="image" width = "140">-->
+        <!--<a href=""<button type="submit">Upload Image</button>-->
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

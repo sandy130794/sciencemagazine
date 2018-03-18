@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Articles</h1>
+        {% if form %}
+        <form method="POST" class="post-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-primary">Save</button>
+        </form>
+        {% else %}
+        <h2>No Articles found</h2>
+        {% endif %}
+    </div>
+{% endblock %}

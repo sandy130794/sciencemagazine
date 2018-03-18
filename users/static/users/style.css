@@ -1,0 +1,74 @@
+body{
+    background-color: #eee;
+}
+
+.login-container {
+    text-align : center;
+    margin-top: 112px;
+}
+
+.login-form{
+    margin-top:35px;
+}
+
+.welcome-header{
+    text-align: center;
+}
+
+.journal-name{
+    font-size: 20px;
+    margin-top: 8px;
+    /*margin-left: 20px;*/
+    margin-bottom: 10px;
+    display: block;
+    color: black;
+    text-transform: capitalize;
+}
+
+.journal-image{
+    height:160px;
+    border-radius:10px;
+}
+
+.journal-header{
+    text-align: center;
+}
+
+.add-btn-journal{
+        float: right;
+        margin-right: 25px;
+}
+
+journal-outer-container{
+    padding: 8px;
+}
+
+.journal-container{
+    border-radius: 5px;
+    padding: 8px;
+    background-color: white;
+}
+
+.action-btn{
+    font-size: 10px;
+}
+
+.articles{
+    padding-bottom: 10px;
+}
+
+.functionality{
+    padding-top: 10px;
+}
+
+.article-list{
+    background: white;
+    width: 300px;
+    padding: 4px;
+    margin-left: 8px;
+}
+
+.article-item{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}

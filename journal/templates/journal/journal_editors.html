@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body %}
+    <h1 class="journal-header">
+        Editors related Journal
+    </h1>
+    <div class="article-list">
+    {% for value in form %}
+        <div class="article-item">
+            <a href="/editor/view/{{ value.id }}">{{value.name}}</a>
+            <a href="/editor/{{ value.id }}"><button class="btn btn-primary">EDIT</button></a>
+            <a href="/editor/delete/{{ value.id }}"><button class="btn btn-primary" >DELETE</button></a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
